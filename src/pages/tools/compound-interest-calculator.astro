@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CompoundInterestCalculator from '../../components/tools/CompoundInterestCalculator';
+
+const title = "Free Compound Interest Calculator - Calculate Investment Growth | Utility Hub";
+const description = "Calculate compound interest with our free online calculator. See how your investments grow over time with yearly breakdown. Monthly, quarterly, and annual compounding.";
+---
+
+<Layout title={title} description={description} canonical="/tools/compound-interest-calculator">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Compound Interest Calculator</h1>
+      <p class="text-gray-600 mb-8">Calculate how your investments grow over time with compound interest. See a yearly breakdown of your investment growth.</p>
+      <CompoundInterestCalculator client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a Compound Interest Calculator?</h2>
+        <p>A compound interest calculator helps you estimate how your investments will grow over time when interest compounds. Unlike simple interest, compound interest earns returns on both the principal and previously earned interest, leading to exponential growth.</p>
+        <h2>How to Use</h2>
+        <p>Enter your principal amount, annual interest rate, time period in years, and select the compounding frequency (annually, semi-annually, quarterly, monthly, or daily). Click calculate to see the total amount and a year-by-year breakdown.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>Retirement planning:</strong> Estimate how your retirement savings will grow</li>
+          <li><strong>Investment analysis:</strong> Compare different investment scenarios</li>
+          <li><strong>Education savings:</strong> Plan for college funds and education expenses</li>
+          <li><strong>Loan comparison:</strong> Understand how compound interest affects loans</li>
+          <li><strong>Wealth building:</strong> Visualize the power of long-term compounding</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/percentage-calculator">Percentage Calculator</a> - Calculate percentages</li>
+          <li><a href="/tools/age-calculator">Age Calculator</a> - Calculate exact age</li>
+          <li><a href="/tools/bmi-calculator">BMI Calculator</a> - Check your BMI</li>
+          <li><a href="/tools/date-difference-calculator">Date Difference Calculator</a> - Find days between dates</li>
+          <li><a href="/tools/timestamp-converter">Timestamp Converter</a> - Convert timestamps</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: What is compounding frequency? Answer: Compounding frequency determines how often interest is calculated and added to your principal. More frequent compounding leads to faster growth.</p>
+        <p>Question: Is this calculator accurate? Answer: Yes, our calculator uses the standard compound interest formula A = P(1 + r/n)^(nt) for precise results.</p>
+        <p>Question: Does the calculator account for taxes or inflation? Answer: No, this calculator shows gross returns before taxes and inflation for educational purposes.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import WebPConverter from '../../components/tools/WebPConverter';
+
+const title = "Free WebP Converter - Convert Images to WebP Online | Utility Hub";
+const description = "Convert images to WebP format online for free. Reduce image size with WebP compression. Client-side conversion - no uploads needed.";
+---
+
+<Layout title={title} description={description} canonical="/tools/webp-converter">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">WebP Converter</h1>
+      <p class="text-gray-600 mb-8">Convert any image to WebP format for better web performance. WebP images are typically 25-35% smaller than JPEGs.</p>
+      <WebPConverter client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a WebP Converter?</h2>
+        <p>A WebP converter is a free online tool that converts images to Google's WebP format. WebP provides superior compression, creating smaller files while maintaining visual quality compared to JPEG and PNG.</p>
+        <h2>How to Use</h2>
+        <p>Upload any image, click "Convert to WebP," and download the converted WebP file. The tool shows the size reduction percentage.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>Website optimization:</strong> Reduce page load times with smaller images</li>
+          <li><strong>SEO:</strong> Improve Core Web Vitals scores with optimized images</li>
+          <li><strong>Storage savings:</strong> Store images in a more efficient format</li>
+          <li><strong>Bandwidth reduction:</strong> Minimize data transfer for image-heavy sites</li>
+          <li><strong>Modern web development:</strong> Use next-gen image formats</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/image-compressor">Image Compressor</a> - Compress JPEG images</li>
+          <li><a href="/tools/image-resizer">Image Resizer</a> - Resize image dimensions</li>
+          <li><a href="/tools/qr-code-generator">QR Code Generator</a> - Generate QR codes</li>
+          <li><a href="/tools/color-picker">Color Picker</a> - Pick HEX/RGB colors</li>
+          <li><a href="/tools/base64-encoder-decoder">Base64 Encoder/Decoder</a> - Encode/decode</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: Is WebP supported by all browsers? Answer: WebP is supported by Chrome, Firefox, Edge, Opera, and Safari 14+. For older browsers, provide JPEG/PNG fallbacks.</p>
+        <p>Question: Is WebP better than JPEG? Answer: WebP typically provides 25-35% smaller file sizes than JPEG at equivalent quality settings.</p>
+        <p>Question: Does this support transparency? Answer: Yes, WebP supports transparency (alpha channel) similar to PNG but with smaller file sizes.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TimestampConverter from '../../components/tools/TimestampConverter';
+
+const title = "Free Timestamp Converter - Convert Unix Timestamps Online | Utility Hub";
+const description = "Convert Unix timestamps to human-readable dates and vice versa. Supports both seconds and milliseconds. Free online timestamp converter.";
+---
+
+<Layout title={title} description={description} canonical="/tools/timestamp-converter">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Timestamp Converter</h1>
+      <p class="text-gray-600 mb-8">Convert Unix timestamps to readable dates and dates to timestamps. Supports seconds and milliseconds format.</p>
+      <TimestampConverter client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a Timestamp Converter?</h2>
+        <p>A timestamp converter is a free online tool that converts Unix timestamps (Epoch time) to human-readable dates and vice versa. Unix timestamps count the number of seconds (or milliseconds) since January 1, 1970 (UTC).</p>
+        <h2>How to Use</h2>
+        <p>Enter a Unix timestamp to convert it to a date, or select a date to get its Unix timestamp. Choose between seconds or milliseconds format based on your needs.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>Database debugging:</strong> Convert timestamp fields to readable dates</li>
+          <li><strong>API development:</strong> Generate timestamps for API requests</li>
+          <li><strong>Log analysis:</strong> Understand log file timestamps</li>
+          <li><strong>System administration:</strong> Work with system time values</li>
+          <li><strong>Programming:</strong> Debug date-related code</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/date-difference-calculator">Date Difference Calculator</a> - Days between dates</li>
+          <li><a href="/tools/age-calculator">Age Calculator</a> - Calculate exact age</li>
+          <li><a href="/tools/json-formatter">JSON Formatter</a> - Format JSON</li>
+          <li><a href="/tools/jwt-decoder">JWT Decoder</a> - Decode JWT tokens</li>
+          <li><a href="/tools/uuid-generator">UUID Generator</a> - Generate UUIDs</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: What is the Unix epoch? Answer: The Unix epoch is January 1, 1970, 00:00:00 UTC. Timestamps count seconds since this moment.</p>
+        <p>Question: What's the difference between seconds and milliseconds? Answer: Seconds timestamps have 10 digits, while milliseconds timestamps have 13 digits. Most systems use seconds, but JavaScript uses milliseconds.</p>
+        <p>Question: Does this handle timezones? Answer: The converter uses your local timezone for display but stores UTC timestamps.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

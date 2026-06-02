@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import JSONFormatter from '../../components/tools/JSONFormatter';
+
+const title = "Free JSON Formatter - Format, Validate, Beautify JSON Online | Utility Hub";
+const description = "Format, validate, and beautify your JSON data with our free online JSON formatter. Minify and validate JSON instantly in your browser.";
+---
+
+<Layout title={title} description={description} canonical="/tools/json-formatter">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">JSON Formatter</h1>
+      <p class="text-gray-600 mb-8">Format, validate, beautify, and minify JSON data instantly. Free online JSON formatter tool.</p>
+      <JSONFormatter client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a JSON Formatter?</h2>
+        <p>A JSON formatter is a free online tool that formats, validates, and beautifies JSON data with proper indentation. It also supports minifying JSON for production use and validating JSON syntax.</p>
+        <h2>How to Use</h2>
+        <p>Paste your JSON data, click "Format" for pretty-printing, "Minify" to compress, or "Validate" to check syntax. Copy the result with one click.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>API development:</strong> Format API response JSON for debugging</li>
+          <li><strong>Configuration files:</strong> Beautify and validate config JSON</li>
+          <li><strong>Data analysis:</strong> Read and analyze structured JSON data</li>
+          <li><strong>Web development:</strong> Validate JSON before use in applications</li>
+          <li><strong>Data transfer:</strong> Minify JSON for efficient data transfer</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/jwt-decoder">JWT Decoder</a> - Decode JWT tokens</li>
+          <li><a href="/tools/base64-encoder-decoder">Base64 Encoder/Decoder</a> - Encode/decode data</li>
+          <li><a href="/tools/uuid-generator">UUID Generator</a> - Generate UUIDs</li>
+          <li><a href="/tools/timestamp-converter">Timestamp Converter</a> - Convert timestamps</li>
+          <li><a href="/tools/regex-tester">Regex Tester</a> - Test regex patterns</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: What is valid JSON? Answer: Valid JSON follows strict syntax rules: keys and strings must be double-quoted, no trailing commas, and proper nesting.</p>
+        <p>Question: Is my JSON sent to a server? Answer: No, all processing happens locally in your browser for privacy.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

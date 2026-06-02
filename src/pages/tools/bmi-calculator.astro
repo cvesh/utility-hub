@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BMICalculator from '../../components/tools/BMICalculator';
+
+const title = "Free BMI Calculator - Calculate Body Mass Index Online | Utility Hub";
+const description = "Calculate your BMI (Body Mass Index) with our free online BMI calculator. Check your weight category and healthy weight range. Instant results with advice.";
+---
+
+<Layout title={title} description={description} canonical="/tools/bmi-calculator">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">BMI Calculator</h1>
+      <p class="text-gray-600 mb-8">Calculate your Body Mass Index and check your weight category. Get your BMI, healthy weight range, and personalized advice.</p>
+      <BMICalculator client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a BMI Calculator?</h2>
+        <p>A BMI (Body Mass Index) calculator is a tool that estimates body fat based on your height and weight. It's used by healthcare professionals as a screening tool to identify potential weight-related health risks.</p>
+        <h2>How to Use This BMI Calculator</h2>
+        <p>Enter your weight in kilograms and height in centimeters, then click "Calculate BMI." The tool instantly shows your BMI score, weight category, healthy weight range, and personalized health advice.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>Health assessment:</strong> Get a quick health screening indicator</li>
+          <li><strong>Fitness tracking:</strong> Monitor changes in body composition over time</li>
+          <li><strong>Weight management:</strong> Set weight loss or gain goals based on healthy ranges</li>
+          <li><strong>Medical consultation:</strong> Prepare health data for doctor visits</li>
+          <li><strong>Insurance assessment:</strong> Estimate BMI for health insurance applications</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/age-calculator">Age Calculator</a> - Calculate exact age</li>
+          <li><a href="/tools/percentage-calculator">Percentage Calculator</a> - Calculate percentages</li>
+          <li><a href="/tools/compound-interest-calculator">Compound Interest Calculator</a> - Investment growth</li>
+          <li><a href="/tools/date-difference-calculator">Date Difference Calculator</a> - Find days between dates</li>
+          <li><a href="/tools/word-counter">Word Counter</a> - Count words and characters</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: What is a healthy BMI? Answer: A BMI between 18.5 and 24.9 is considered a healthy weight range for most adults.</p>
+        <p>Question: Is BMI accurate for athletes? Answer: BMI may overestimate body fat in athletes with high muscle mass. It's a screening tool, not a diagnostic test.</p>
+        <p>Question: Does this calculator work for children? Answer: This calculator is designed for adults. Children's BMI is assessed using growth charts and percentiles.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

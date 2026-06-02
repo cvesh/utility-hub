@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ColorPickerTool from '../../components/tools/ColorPicker';
+
+const title = "Free Color Picker - HEX to RGB Converter Online | Utility Hub";
+const description = "Pick colors with our free online color picker. Convert between HEX and RGB color formats. Preview colors and copy values instantly.";
+---
+
+<Layout title={title} description={description} canonical="/tools/color-picker">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Color Picker & Converter</h1>
+      <p class="text-gray-600 mb-8">Pick colors visually and convert between HEX and RGB formats. Preview colors and copy values instantly with one click.</p>
+      <ColorPickerTool client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a Color Picker?</h2>
+        <p>A color picker is a free online tool that lets you choose colors visually and convert between HEX and RGB color formats. It's essential for web designers, developers, and digital artists working with colors.</p>
+        <h2>How to Use</h2>
+        <p>Use the color picker to select any color visually. The tool automatically displays the HEX and RGB values. Click "Copy" to copy either format to your clipboard. Quick-select common colors from the preset buttons.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>Web design:</strong> Pick and match colors for website designs</li>
+          <li><strong>Graphic design:</strong> Find exact color values for design projects</li>
+          <li><strong>UI development:</strong> Convert between color formats for styling</li>
+          <li><strong>Digital art:</strong> Select precise colors for artwork</li>
+          <li><strong>Brand management:</strong> Match brand colors across different formats</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/qr-code-generator">QR Code Generator</a> - Generate QR codes</li>
+          <li><a href="/tools/image-compressor">Image Compressor</a> - Compress images</li>
+          <li><a href="/tools/image-resizer">Image Resizer</a> - Resize images</li>
+          <li><a href="/tools/webp-converter">WebP Converter</a> - Convert to WebP</li>
+          <li><a href="/tools/json-formatter">JSON Formatter</a> - Format JSON</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: What is the difference between HEX and RGB? Answer: HEX uses hexadecimal values (#RRGGBB), while RGB uses decimal values (0-255) for red, green, and blue channels.</p>
+        <p>Question: Can I copy color values? Answer: Yes, click the "Copy" button next to either HEX or RGB value to copy to clipboard.</p>
+        <p>Question: What color formats are supported? Answer: This tool supports HEX (#RRGGBB) and RGB (r, g, b) color formats with instant conversion between them.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

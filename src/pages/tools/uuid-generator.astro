@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import UUIDGenerator from '../../components/tools/UUIDGenerator';
+
+const title = "Free UUID Generator - Generate UUIDs Online | Utility Hub";
+const description = "Generate random UUIDs (v4) online for free. Create one or multiple UUIDs instantly. Copy to clipboard with one click.";
+---
+
+<Layout title={title} description={description} canonical="/tools/uuid-generator">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">UUID Generator</h1>
+      <p class="text-gray-600 mb-8">Generate random UUIDs (v4) instantly. Create multiple UUIDs at once with copy-to-clipboard support.</p>
+      <UUIDGenerator client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a UUID Generator?</h2>
+        <p>A UUID generator creates universally unique identifiers (UUIDs) following the v4 standard, which uses random numbers. These 128-bit identifiers are essential for distributed systems where unique IDs must be generated without coordination.</p>
+        <h2>How to Use</h2>
+        <p>Select how many UUIDs you want to generate (up to 100) and click "Generate." Each UUID can be copied individually with the copy button next to it.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>Database keys:</strong> Generate unique primary keys for database records</li>
+          <li><strong>Session IDs:</strong> Create unique session identifiers</li>
+          <li><strong>API development:</strong> Generate unique resource IDs</li>
+          <li><strong>Distributed systems:</strong> Create conflict-free identifiers across systems</li>
+          <li><strong>Testing:</strong> Generate test data with unique identifiers</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/json-formatter">JSON Formatter</a> - Format JSON</li>
+          <li><a href="/tools/jwt-decoder">JWT Decoder</a> - Decode JWT tokens</li>
+          <li><a href="/tools/base64-encoder-decoder">Base64 Encoder/Decoder</a> - Encode/decode</li>
+          <li><a href="/tools/timestamp-converter">Timestamp Converter</a> - Convert timestamps</li>
+          <li><a href="/tools/regex-tester">Regex Tester</a> - Test patterns</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: What is a UUID v4? Answer: UUID v4 generates random UUIDs. The format is 32 hexadecimal characters displayed as 8-4-4-4-12.</p>
+        <p>Question: Are the UUIDs truly unique? Answer: While theoretically collisions are possible, the probability is extremely low (1 in 5.3×10^36 for v4).</p>
+        <p>Question: Can I use these in production? Answer: Yes, these are standard UUID v4 values suitable for production use.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

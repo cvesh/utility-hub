@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseConverter from '../../components/tools/CaseConverter';
+
+const title = "Free Case Converter - Convert Text Case Online | Utility Hub";
+const description = "Convert text between UPPER, lower, Title, Sentence, camelCase, PascalCase, snake_case, and kebab-case. Free online case converter tool.";
+---
+
+<Layout title={title} description={description} canonical="/tools/case-converter">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Case Converter</h1>
+      <p class="text-gray-600 mb-8">Convert text between different cases instantly: UPPER CASE, lower case, Title Case, Sentence case, camelCase, PascalCase, snake_case, and kebab-case.</p>
+      <CaseConverter client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a Case Converter?</h2>
+        <p>A case converter is a free online tool that transforms text between different capitalization styles including uppercase, lowercase, title case, sentence case, camelCase, PascalCase, snake_case, and kebab-case.</p>
+        <h2>How to Use</h2>
+        <p>Type or paste your text in the input area. The converter automatically shows your text in all 8 case formats. Click "Copy" to copy any converted version.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>Programming:</strong> Convert variable names between naming conventions</li>
+          <li><strong>Writing:</strong> Apply proper title case to headlines and headings</li>
+          <li><strong>Data formatting:</strong> Standardize text formats for databases</li>
+          <li><strong>SEO:</strong> Optimize URL slugs with kebab-case</li>
+          <li><strong>Content creation:</strong> Ensure consistent capitalization in content</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/word-counter">Word Counter</a> - Count words</li>
+          <li><a href="/tools/character-counter">Character Counter</a> - Count characters</li>
+          <li><a href="/tools/remove-extra-spaces">Remove Extra Spaces</a> - Clean text</li>
+          <li><a href="/tools/json-formatter">JSON Formatter</a> - Format JSON</li>
+          <li><a href="/tools/regex-tester">Regex Tester</a> - Test patterns</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: What's the difference between camelCase and PascalCase? Answer: camelCase starts with a lowercase letter (e.g., "helloWorld"), while PascalCase starts with uppercase (e.g., "HelloWorld").</p>
+        <p>Question: Is my text stored? Answer: No, all conversion happens in your browser locally.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

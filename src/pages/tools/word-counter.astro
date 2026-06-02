@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Counter from '../../components/tools/WordCounter';
+
+const title = "Free Word Counter - Count Words Online | Utility Hub";
+const description = "Count words, characters, sentences, paragraphs, and reading time with our free online word counter. Real-time text analysis tool.";
+---
+
+<Layout title={title} description={description} canonical="/tools/word-counter">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Word Counter</h1>
+      <p class="text-gray-600 mb-8">Count words, characters, sentences, paragraphs, and estimate reading time in real-time. Free online word counter tool.</p>
+      <Counter client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a Word Counter?</h2>
+        <p>A word counter is a free online tool that analyzes text to count words, characters, sentences, paragraphs, and estimate reading time. It's essential for writers, students, and professionals who need to meet specific content length requirements.</p>
+        <h2>How to Use</h2>
+        <p>Simply type or paste your text into the text area. The word counter updates in real-time, instantly showing word count, character count, sentences, paragraphs, and estimated reading time.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>Essay writing:</strong> Meet word count requirements for academic papers</li>
+          <li><strong>SEO content:</strong> Optimize content length for search engines</li>
+          <li><strong>Social media:</strong> Stay within character limits for posts</li>
+          <li><strong>Professional writing:</strong> Maintain concise business communications</li>
+          <li><strong>Translation:</strong> Calculate word counts for translation projects</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/character-counter">Character Counter</a> - Count characters precisely</li>
+          <li><a href="/tools/case-converter">Case Converter</a> - Convert text case</li>
+          <li><a href="/tools/remove-extra-spaces">Remove Extra Spaces</a> - Clean up text</li>
+          <li><a href="/tools/json-formatter">JSON Formatter</a> - Format JSON data</li>
+          <li><a href="/tools/regex-tester">Regex Tester</a> - Test regular expressions</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: Does the counter count words in real-time? Answer: Yes, the counter updates instantly as you type or paste text.</p>
+        <p>Question: What is reading time? Answer: Reading time estimates how long it takes to read the text at an average reading speed of 200 words per minute.</p>
+        <p>Question: Is my text stored anywhere? Answer: No, all analysis happens locally in your browser. Your text is never sent to any server.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

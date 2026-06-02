@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AgeCalculator from '../../components/tools/AgeCalculator';
+
+const title = "Free Age Calculator - Calculate Exact Age Online | Utility Hub";
+const description = "Calculate your exact age in years, months, days, and total days with our free online age calculator. Find out how many days until your next birthday.";
+---
+
+<Layout title={title} description={description} canonical="/tools/age-calculator">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Age Calculator</h1>
+      <p class="text-gray-600 mb-8">Calculate your exact age in years, months, days, and total days since birth. Free online age calculator tool.</p>
+
+      <!-- React Island -->
+      <AgeCalculator client:load />
+
+      <!-- SEO Content -->
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is an Age Calculator?</h2>
+        <p>An age calculator is a free online tool that calculates your exact age based on your date of birth. Unlike simple year-based calculations, our age calculator provides precise results including years, months, days, total days since birth, and the days remaining until your next birthday. It's the most accurate way to determine someone's age for any purpose.</p>
+
+        <h2>How to Use This Age Calculator</h2>
+        <p>Using our free age calculator is simple. Just select your date of birth using the date picker, and click "Calculate Age." The tool instantly displays your exact age in years, months, days, total days since birth, and how many days until your next birthday. No signup or personal information required.</p>
+
+        <h2>Use Cases for Our Age Calculator</h2>
+        <ul>
+          <li><strong>Personal use:</strong> Find out your exact age for birthday planning or curiosity</li>
+          <li><strong>Medical purposes:</strong> Calculate patient age for medical forms and prescriptions</li>
+          <li><strong>Legal documentation:</strong> Verify age for legal documents and contracts</li>
+          <li><strong>School enrollment:</strong> Determine a child's exact age for school registration</li>
+          <li><strong>Retirement planning:</strong> Calculate precisely how many days until retirement</li>
+        </ul>
+
+        <h2>Benefits of Using Our Online Age Calculator</h2>
+        <p>Our age calculator is completely free, works offline, and provides instant results. It's mobile-friendly and works on any device. There are no ads cluttering the interface, and we don't store any of your personal information. The tool uses pure JavaScript for accurate calculations without any server calls, ensuring your privacy and fast performance.</p>
+
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/date-difference-calculator">Date Difference Calculator</a> - Calculate days between two dates</li>
+          <li><a href="/tools/percentage-calculator">Percentage Calculator</a> - Calculate percentages online</li>
+          <li><a href="/tools/bmi-calculator">BMI Calculator</a> - Check your Body Mass Index</li>
+          <li><a href="/tools/compound-interest-calculator">Compound Interest Calculator</a> - Calculate investment growth</li>
+          <li><a href="/tools/timestamp-converter">Timestamp Converter</a> - Convert timestamps to dates</li>
+        </ul>
+
+        <h3>Frequently Asked Questions</h3>
+        <h4>Is this age calculator accurate?</h4>
+        <p>Yes, our age calculator provides precise calculations accounting for leap years and varying month lengths. It calculates age down to the exact day.</p>
+        <h4>Do I need to create an account?</h4>
+        <p>No, our age calculator is completely free and requires no registration or personal information.</p>
+        <h4>Can I use this on my phone?</h4>
+        <p>Yes, the age calculator is fully responsive and works perfectly on all devices including smartphones and tablets.</p>
+        <h4>Is my date of birth stored?</h4>
+        <p>No, all calculations happen locally in your browser. Your date of birth is never sent to any server or stored anywhere.</p>
+        <h4>Can I calculate age for any date?</h4>
+        <p>Yes, you can enter any date of birth, and the calculator will give you the exact age up to the current date.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

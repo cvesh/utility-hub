@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ImageResizer from '../../components/tools/ImageResizer';
+
+const title = "Free Image Resizer - Resize Images Online | Utility Hub";
+const description = "Resize images to any dimensions online for free. Maintain aspect ratio support. Client-side image resizing - no uploads needed.";
+---
+
+<Layout title={title} description={description} canonical="/tools/image-resizer">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Image Resizer</h1>
+      <p class="text-gray-600 mb-8">Resize images to any dimensions with aspect ratio lock. All processing happens locally in your browser.</p>
+      <ImageResizer client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is an Image Resizer?</h2>
+        <p>An image resizer is a free online tool that changes image dimensions to specified width and height. It uses HTML5 Canvas for client-side processing, ensuring your images stay private.</p>
+        <h2>How to Use</h2>
+        <p>Upload an image, adjust the width and height (maintain aspect ratio option available), and click "Resize Image." Preview and download your resized image.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>Website images:</strong> Resize images to fit website layouts</li>
+          <li><strong>Social media:</strong> Optimize images for specific platform dimensions</li>
+          <li><strong>Thumbnails:</strong> Create thumbnail versions of large images</li>
+          <li><strong>Print preparation:</strong> Prepare images for printing at specific sizes</li>
+          <li><strong>Email attachments:</strong> Reduce image dimensions for email sending</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/image-compressor">Image Compressor</a> - Compress image files</li>
+          <li><a href="/tools/webp-converter">WebP Converter</a> - Convert to WebP</li>
+          <li><a href="/tools/qr-code-generator">QR Code Generator</a> - Generate QR codes</li>
+          <li><a href="/tools/color-picker">Color Picker</a> - Pick HEX/RGB colors</li>
+          <li><a href="/tools/base64-encoder-decoder">Base64 Encoder/Decoder</a> - Encode/decode</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: Is my image uploaded somewhere? Answer: No, all resizing happens locally in your browser.</p>
+        <p>Question: What format is the resized image? Answer: The resized image is saved as PNG format.</p>
+        <p>Question: Can I maintain the aspect ratio? Answer: Yes, toggle the "Maintain aspect ratio" checkbox to keep proportions.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

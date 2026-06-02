@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import RegexTester from '../../components/tools/RegexTester';
+
+const title = "Free Regex Tester - Test Regular Expressions Online | Utility Hub";
+const description = "Test and debug regular expressions in real-time. See matches highlighted with count. Free online regex tester tool.";
+---
+
+<Layout title={title} description={description} canonical="/tools/regex-tester">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Regex Tester</h1>
+      <p class="text-gray-600 mb-8">Test and debug regular expressions in real-time. See matches highlighted with match count. Supports all common flags.</p>
+      <RegexTester client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a Regex Tester?</h2>
+        <p>A regex tester is a free online tool that lets you test regular expression patterns against strings in real-time. It shows matches with count and highlights matches in the test string.</p>
+        <h2>How to Use</h2>
+        <p>Enter your regular expression pattern, select flags (g, i, m, s, u, y), and enter a test string. Click "Test Regex" to see all matches with their count.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>Web development:</strong> Validate form inputs and email addresses</li>
+          <li><strong>Data extraction:</strong> Extract patterns from text data</li>
+          <li><strong>Text processing:</strong> Find and replace text patterns</li>
+          <li><strong>Log analysis:</strong> Parse log files with regex patterns</li>
+          <li><strong>Learning:</strong> Practice and learn regular expressions</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/json-formatter">JSON Formatter</a> - Format JSON</li>
+          <li><a href="/tools/case-converter">Case Converter</a> - Convert text case</li>
+          <li><a href="/tools/remove-extra-spaces">Remove Extra Spaces</a> - Clean text</li>
+          <li><a href="/tools/word-counter">Word Counter</a> - Count words</li>
+          <li><a href="/tools/character-counter">Character Counter</a> - Count characters</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: What are common regex flags? Answer: g (global - find all matches), i (case-insensitive), m (multiline), s (dotall), u (unicode), y (sticky).</p>
+        <p>Question: Is my data sent to a server? Answer: No, all regex testing happens locally in your browser.</p>
+        <p>Question: Does this use JavaScript regex syntax? Answer: Yes, this tester uses JavaScript's built-in RegExp engine.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import JWTDecoder from '../../components/tools/JWTDecoder';
+
+const title = "Free JWT Decoder - Decode JWT Tokens Online | Utility Hub";
+const description = "Decode and inspect JWT tokens online for free. View header, payload, and signature of any JWT token without sending data to any server.";
+---
+
+<Layout title={title} description={description} canonical="/tools/jwt-decoder">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">JWT Decoder</h1>
+      <p class="text-gray-600 mb-8">Decode and inspect JWT tokens instantly. View the header, payload, and signature of any JSON Web Token.</p>
+      <JWTDecoder client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a JWT Decoder?</h2>
+        <p>A JWT decoder is a free online tool that decodes JSON Web Tokens (JWT) to reveal their header, payload, and signature components. It's essential for debugging authentication and authorization in web applications.</p>
+        <h2>How to Use</h2>
+        <p>Paste your JWT token starting with "eyJ..." and click "Decode Token." The tool instantly shows the decoded header containing the algorithm, payload with claims, and signature.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>Authentication debugging:</strong> Inspect JWT tokens from your applications</li>
+          <li><strong>Security auditing:</strong> Verify token contents and expiration</li>
+          <li><strong>Development:</strong> Test and validate JWT generation</li>
+          <li><strong>API integration:</strong> Understand token payloads from third-party APIs</li>
+          <li><strong>Learning:</strong> Study JWT structure and contents</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/json-formatter">JSON Formatter</a> - Format JSON data</li>
+          <li><a href="/tools/base64-encoder-decoder">Base64 Encoder/Decoder</a> - Encode/decode data</li>
+          <li><a href="/tools/uuid-generator">UUID Generator</a> - Generate UUIDs</li>
+          <li><a href="/tools/timestamp-converter">Timestamp Converter</a> - Convert timestamps</li>
+          <li><a href="/tools/regex-tester">Regex Tester</a> - Test regex patterns</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: Is my JWT token sent to a server? Answer: No, all decoding happens locally in your browser. Your tokens remain private.</p>
+        <p>Question: Can this decode encrypted JWTs? Answer: This tool decodes base64-encoded JWTs (which are not encrypted). Encrypted JWTs (JWE) cannot be decoded without the key.</p>
+        <p>Question: Does this verify the token signature? Answer: No, this tool only decodes and displays the token contents. Signature verification requires the secret key.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CharacterCounter from '../../components/tools/CharacterCounter';
+
+const title = "Free Character Counter - Count Characters Online | Utility Hub";
+const description = "Count characters, words, and lines in your text with our free online character counter. Real-time character counting with space options.";
+---
+
+<Layout title={title} description={description} canonical="/tools/character-counter">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Character Counter</h1>
+      <p class="text-gray-600 mb-8">Count characters, words, and lines in real-time. Monitor total characters, characters without spaces, and stay within limits.</p>
+      <CharacterCounter client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a Character Counter?</h2>
+        <p>A character counter is a free online tool that counts the number of characters in your text, with options to count with or without spaces. Essential for social media posts, SMS messages, and content with strict character limits.</p>
+        <h2>How to Use</h2>
+        <p>Type or paste text into the text area. The counter instantly shows total characters, characters without spaces, word count, and line count in real-time.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>Social media:</strong> Fit posts within Twitter/X, Instagram character limits</li>
+          <li><strong>SMS marketing:</strong> Ensure messages fit within SMS character limits</li>
+          <li><strong>SEO meta tags:</strong> Optimize meta descriptions for length requirements</li>
+          <li><strong>Content writing:</strong> Monitor article and blog post lengths</li>
+          <li><strong>Form fields:</strong> Check form input against character limits</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/word-counter">Word Counter</a> - Count words and reading time</li>
+          <li><a href="/tools/case-converter">Case Converter</a> - Convert text case</li>
+          <li><a href="/tools/remove-extra-spaces">Remove Extra Spaces</a> - Clean up text</li>
+          <li><a href="/tools/json-formatter">JSON Formatter</a> - Format JSON data</li>
+          <li><a href="/tools/base64-encoder-decoder">Base64 Encoder/Decoder</a> - Encode and decode data</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: What's the difference between characters with and without spaces? Answer: "Characters with spaces" includes all characters including spaces. "Characters without spaces" excludes whitespace for a more accurate content count.</p>
+        <p>Question: Can I use this for Twitter/X posts? Answer: Yes, our character counter is perfect for monitoring tweet lengths.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

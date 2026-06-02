@@ -1,0 +1,58 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PercentageCalculator from '../../components/tools/PercentageCalculator';
+
+const title = "Free Percentage Calculator - Calculate Percentages Online | Utility Hub";
+const description = "Calculate percentages easily with our free online percentage calculator. Find what percent one number is of another, calculate percentage change, and more.";
+---
+
+<Layout title={title} description={description} canonical="/tools/percentage-calculator">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Percentage Calculator</h1>
+      <p class="text-gray-600 mb-8">Free online percentage calculator for all your percentage needs. Calculate percentage of a number, find what percent one number is of another, and compute percentage change.</p>
+
+      <PercentageCalculator client:load />
+
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a Percentage Calculator?</h2>
+        <p>A percentage calculator is a free online tool that helps you calculate percentages quickly and accurately. Whether you need to find a percentage of a number, determine what percent one value is of another, or calculate the percentage change between two values, our tool handles all these calculations instantly.</p>
+
+        <h2>How to Use This Percentage Calculator</h2>
+        <p>Our percentage calculator offers three modes: "% of" calculates what X% of Y equals, "What %" finds what percentage one number is of another, and "% Change" calculates the percentage increase or decrease between two numbers. Simply select your mode, enter the values, and click calculate for instant results.</p>
+
+        <h2>Use Cases for Our Percentage Calculator</h2>
+        <ul>
+          <li><strong>Sales and discounts:</strong> Calculate sale prices and discount percentages</li>
+          <li><strong>Financial planning:</strong> Compute interest rates and investment returns</li>
+          <li><strong>Academic grading:</strong> Calculate test scores and grade percentages</li>
+          <li><strong>Business analytics:</strong> Determine growth rates and performance metrics</li>
+          <li><strong>Everyday math:</strong> Calculate tips, taxes, and other common percentages</li>
+        </ul>
+
+        <h2>Benefits of Using Our Online Percentage Calculator</h2>
+        <p>Our percentage calculator is completely free, works offline, and provides instant results. It features three calculation modes to handle all common percentage scenarios. The mobile-friendly design works on any device, and all calculations happen locally in your browser for privacy.</p>
+
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/compound-interest-calculator">Compound Interest Calculator</a> - Calculate investment growth</li>
+          <li><a href="/tools/age-calculator">Age Calculator</a> - Calculate exact age</li>
+          <li><a href="/tools/bmi-calculator">BMI Calculator</a> - Check your Body Mass Index</li>
+          <li><a href="/tools/date-difference-calculator">Date Difference Calculator</a> - Find days between dates</li>
+          <li><a href="/tools/timestamp-converter">Timestamp Converter</a> - Convert timestamps to dates</li>
+        </ul>
+
+        <h3>Frequently Asked Questions</h3>
+        <h4>How do I calculate a percentage of a number?</h4>
+        <p>Use our "% of" mode. For example, to find 20% of 80, enter 20 in the first field and 80 in the second. The result is 16.</p>
+        <h4>How do I calculate percentage change?</h4>
+        <p>Use the "% Change" mode. Enter the old value and new value, and the calculator shows the percentage increase or decrease.</p>
+        <h4>Is this calculator accurate?</h4>
+        <p>Yes, our percentage calculator provides precise results rounded to two decimal places for all calculations.</p>
+        <h4>Can I use this on mobile?</h4>
+        <p>Yes, the calculator is fully responsive and works on all devices including smartphones and tablets.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

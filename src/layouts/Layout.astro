@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+}
+
+const { title, description, canonical = '' } = Astro.props;
+const site = 'https://utilityhub.com';
+const url = canonical ? `${site}${canonical}` : site;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+
+    <!-- Structured Schema - Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Utility Hub",
+      "description": "Free online utility tools and calculators",
+      "url": site
+    })}></script>
+  </head>
+  <body class="font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="/" class="text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors">
+          Utility Hub
+        </a>
+        <div class="flex gap-4 text-sm">
+          <a href="/#calculators" class="text-gray-600 hover:text-blue-600">Calculators</a>
+          <a href="/#text-tools" class="text-gray-600 hover:text-blue-600">Text Tools</a>
+          <a href="/#dev-tools" class="text-gray-600 hover:text-blue-600">Dev Tools</a>
+        </div>
+      </div>
+    </nav>
+
+    <slot />
+  </body>
+</html>

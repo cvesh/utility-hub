@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import RemoveExtraSpaces from '../../components/tools/RemoveExtraSpaces';
+
+const title = "Free Remove Extra Spaces Tool - Clean Up Text Online | Utility Hub";
+const description = "Remove extra spaces, double spaces, and leading/trailing whitespace from your text. Free online text cleaner tool.";
+---
+
+<Layout title={title} description={description} canonical="/tools/remove-extra-spaces">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Remove Extra Spaces</h1>
+      <p class="text-gray-600 mb-8">Clean up your text by removing extra spaces, double spaces, and unnecessary whitespace. Free online text cleaner tool.</p>
+      <RemoveExtraSpaces client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a Remove Extra Spaces Tool?</h2>
+        <p>This free online tool removes extra spaces from your text, including double spaces, leading/trailing whitespace, and excessive line breaks. It normalizes your text for clean formatting.</p>
+        <h2>How to Use</h2>
+        <p>Paste your text with extra spaces into the input area and click "Clean Text." The tool instantly removes all unnecessary whitespace and shows you how many characters were removed.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>Data cleaning:</strong> Normalize text data for databases</li>
+          <li><strong>Copy editing:</strong> Clean up text pasted from different sources</li>
+          <li><strong>Email formatting:</strong> Remove extra spaces before sending emails</li>
+          <li><strong>Code formatting:</strong> Clean up whitespace in code files</li>
+          <li><strong>Document preparation:</strong> Prepare clean text for publishing</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/word-counter">Word Counter</a> - Count words</li>
+          <li><a href="/tools/case-converter">Case Converter</a> - Convert text case</li>
+          <li><a href="/tools/character-counter">Character Counter</a> - Count characters</li>
+          <li><a href="/tools/json-formatter">JSON Formatter</a> - Format JSON</li>
+          <li><a href="/tools/regex-tester">Regex Tester</a> - Test patterns</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: What does this tool remove? Answer: It removes double spaces, leading/trailing spaces, spaces before line breaks, and normalizes multiple line breaks.</p>
+        <p>Question: Does it remove all spaces? Answer: No, it only removes extra spaces while preserving single spaces between words and appropriate paragraph breaks.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>

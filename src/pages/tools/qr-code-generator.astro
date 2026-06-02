@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QRCodeGenerator from '../../components/tools/QRCodeGenerator';
+
+const title = "Free QR Code Generator - Create QR Codes Online | Utility Hub";
+const description = "Generate QR codes for any text or URL with our free online QR code generator. Download as PNG. No signup required.";
+---
+
+<Layout title={title} description={description} canonical="/tools/qr-code-generator">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">QR Code Generator</h1>
+      <p class="text-gray-600 mb-8">Generate QR codes for any text or URL instantly. Download your QR code as a PNG image. Free online QR code generator.</p>
+      <QRCodeGenerator client:load />
+      <article class="prose prose-gray max-w-none mt-12">
+        <h2>What is a QR Code Generator?</h2>
+        <p>A QR code generator is a free online tool that creates QR (Quick Response) codes from text or URLs. QR codes are two-dimensional barcodes that can be scanned by smartphone cameras to access encoded information.</p>
+        <h2>How to Use</h2>
+        <p>Enter any text or URL, click "Generate QR Code," and download the QR code as a PNG image. The code can be scanned by any QR reader app.</p>
+        <h2>Use Cases</h2>
+        <ul>
+          <li><strong>Marketing:</strong> Link to websites, promotions, and landing pages</li>
+          <li><strong>Business cards:</strong> Share contact information digitally</li>
+          <li><strong>Restaurants:</strong> Create digital menus accessible via QR codes</li>
+          <li><strong>Events:</strong> Quick access to tickets and event information</li>
+          <li><strong>WiFi sharing:</strong> Generate QR codes for WiFi network access</li>
+        </ul>
+        <h3>Internal Links</h3>
+        <ul>
+          <li><a href="/tools/image-compressor">Image Compressor</a> - Compress images</li>
+          <li><a href="/tools/image-resizer">Image Resizer</a> - Resize images</li>
+          <li><a href="/tools/webp-converter">WebP Converter</a> - Convert to WebP</li>
+          <li><a href="/tools/color-picker">Color Picker</a> - Pick and convert colors</li>
+          <li><a href="/tools/base64-encoder-decoder">Base64 Encoder/Decoder</a> - Encode/decode</li>
+        </ul>
+        <h4>Frequently Asked Questions</h4>
+        <p>Question: Can I use these QR codes commercially? Answer: Yes, generated QR codes are free for both personal and commercial use.</p>
+        <p>Question: Do QR codes expire? Answer: No, QR codes are static images and never expire. The code contains your data directly.</p>
+        <p>Question: What size are the generated QR codes? Answer: The generated QR codes are 250x250 pixels PNG images.</p>
+      </article>
+    </div>
+  </main>
+</Layout>
+</write_to_file>
