@@ -57,14 +57,13 @@ export default function RegexTester() {
               {testString && (
                 <div className="mt-3">
                   <div className="text-xs text-gray-500 mb-1">Highlighted match:</div>
-                  <div className="p-3 bg-gray-50 rounded-lg text-sm leading-relaxed break-all">
-                    {(() => {
+                  <div className="p-3 bg-gray-50 rounded-lg text-sm leading-relaxed break-all" dangerouslySetInnerHTML={{ __html: (() => {
                       try {
-                        const regex = new RegExp(pattern, flags);
-                        return testString.replace(regex, (m) => `<mark class="bg-yellow-200 px-0.5">${m}</mark>`);
-                      } catch { return testString; }
-                    })()}
-                  </div>
+                        const escapedTest = testString.replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>');
+                        const regex = new RegExp(pattern, flags.replace('g', '') + 'g');
+                        return escapedTest.replace(regex, (m) => `<mark class="bg-yellow-200 px-0.5">${m}</mark>`);
+                      } catch { return testString.replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>'); }
+                    })() }} />
                 </div>
               )}
             </>

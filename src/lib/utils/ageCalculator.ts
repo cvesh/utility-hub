@@ -29,11 +29,13 @@ export function calculateAge(birthDate: Date): AgeResult {
   );
 
   const nextBirthday = new Date(today.getFullYear(), birth.getMonth(), birth.getDate());
-  if (nextBirthday < today) {
+  // Compare only dates (not time) by normalizing today to midnight
+  const todayMidnight = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  if (nextBirthday < todayMidnight) {
     nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
   }
-  const nextBirthdayDays = Math.ceil(
-    (nextBirthday.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)
+  const nextBirthdayDays = Math.round(
+    (nextBirthday.getTime() - todayMidnight.getTime()) / (1000 * 60 * 60 * 24)
   );
 
   return { years, months, days, totalDays, nextBirthdayDays };

@@ -44,8 +44,8 @@ export function convertCase(text: string, targetCase: 'upper' | 'lower' | 'title
 
 export function removeExtraSpaces(text: string): string {
   return text
-    .replace(/\s+/g, ' ')
     .replace(/\n\s*\n/g, '\n\n')
-    .replace(/^\s+|\s+$/g, '')
-    .replace(/[ \t]+\n/g, '\n');
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/[^\S\n]+/g, ' ')
+    .replace(/^\s+|\s+$/g, '');
 }

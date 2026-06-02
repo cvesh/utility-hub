@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function ImageCompressor() {
   const [originalFile, setOriginalFile] = useState<File | null>(null);
@@ -9,6 +9,14 @@ export default function ImageCompressor() {
   const [quality, setQuality] = useState(70);
   const [loading, setLoading] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const originalUrlRef = useRef<string>('');
+
+  useEffect(() => {
+    return () => {
+      if (originalUrlRef.current) URL.revokeObjectURL(originalUrlRef.current);
+      if (compressedUrl) URL.revokeObjectURL(compressedUrl);
+    };
+  }, [compressedUrl]);
 
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -37,6 +45,7 @@ export default function ImageCompressor() {
       canvas.toBlob(
         (blob) => {
           if (blob) {
+            if (compressedUrl) URL.revokeObjectURL(compressedUrl);
             setCompressedUrl(URL.createObjectURL(blob));
             setCompressedSize(blob.size);
           }
@@ -45,8 +54,10 @@ export default function ImageCompressor() {
         'image/jpeg',
         quality / 100
       );
+      if (originalUrlRef.current) URL.revokeObjectURL(originalUrlRef.current);
     };
-    img.src = URL.createObjectURL(originalFile);
+    originalUrlRef.current = URL.createObjectURL(originalFile);
+    img.src = originalUrlRef.current;
   };
 
   const downloadCompressed = () => {

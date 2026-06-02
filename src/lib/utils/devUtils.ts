@@ -90,6 +90,8 @@ export function testRegex(pattern: string, flags: string, testString: string): {
     while ((match = regex.exec(testString)) !== null) {
       matches.push(match[0]);
       if (!flags.includes('g')) break;
+      // Prevent infinite loop when regex matches empty string
+      if (match[0].length === 0) regex.lastIndex++;
     }
     return { matches, count: matches.length };
   } catch (e) {

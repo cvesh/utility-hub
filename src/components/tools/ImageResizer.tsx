@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function ImageResizer() {
   const [file, setFile] = useState<File | null>(null);
@@ -10,6 +10,14 @@ export default function ImageResizer() {
   const [resultUrl, setResultUrl] = useState('');
   const [resultSize, setResultSize] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const previewUrlRef = useRef<string>('');
+
+  useEffect(() => {
+    return () => {
+      if (previewUrlRef.current) URL.revokeObjectURL(previewUrlRef.current);
+      if (resultUrl) URL.revokeObjectURL(resultUrl);
+    };
+  }, [resultUrl]);
 
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const f = e.target.files?.[0];
@@ -21,8 +29,10 @@ export default function ImageResizer() {
       setWidth(img.width);
       setHeight(img.height);
       setAspectRatio(img.width / img.height);
+      if (previewUrlRef.current) URL.revokeObjectURL(previewUrlRef.current);
     };
-    img.src = URL.createObjectURL(f);
+    previewUrlRef.current = URL.createObjectURL(f);
+    img.src = previewUrlRef.current;
   };
 
   const handleWidthChange = (w: number) => {
@@ -38,6 +48,7 @@ export default function ImageResizer() {
   const resizeImage = () => {
     if (!file) return;
     const img = new Image();
+    const url = URL.createObjectURL(file);
     img.onload = () => {
       const canvas = canvasRef.current;
       if (!canvas) return;
@@ -48,12 +59,14 @@ export default function ImageResizer() {
       ctx.drawImage(img, 0, 0, width, height);
       canvas.toBlob((blob) => {
         if (blob) {
+          if (resultUrl) URL.revokeObjectURL(resultUrl);
           setResultUrl(URL.createObjectURL(blob));
           setResultSize(blob.size);
         }
       }, 'image/png');
+      URL.revokeObjectURL(url);
     };
-    img.src = URL.createObjectURL(file);
+    img.src = url;
   };
 
   const downloadResized = () => {

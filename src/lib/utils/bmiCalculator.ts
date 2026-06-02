@@ -6,6 +6,12 @@ export interface BMIResult {
 }
 
 export function calculateBMI(weightKg: number, heightCm: number): BMIResult {
+  if (heightCm <= 0) {
+    return { bmi: 0, category: 'Invalid', healthyRange: 'N/A', advice: 'Please enter a valid height greater than 0.' };
+  }
+  if (weightKg < 0) {
+    return { bmi: 0, category: 'Invalid', healthyRange: 'N/A', advice: 'Please enter a valid weight.' };
+  }
   const heightM = heightCm / 100;
   const bmi = Math.round((weightKg / (heightM * heightM)) * 10) / 10;
 

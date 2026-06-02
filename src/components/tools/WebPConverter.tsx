@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function WebPConverter() {
   const [file, setFile] = useState<File | null>(null);
@@ -7,6 +7,12 @@ export default function WebPConverter() {
   const [resultSize, setResultSize] = useState(0);
   const [loading, setLoading] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    return () => {
+      if (resultUrl) URL.revokeObjectURL(resultUrl);
+    };
+  }, [resultUrl]);
 
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const f = e.target.files?.[0];
@@ -20,6 +26,7 @@ export default function WebPConverter() {
     setLoading(true);
 
     const img = new Image();
+    const url = URL.createObjectURL(file);
     img.onload = () => {
       const canvas = canvasRef.current;
       if (!canvas) return;
@@ -32,6 +39,7 @@ export default function WebPConverter() {
       canvas.toBlob(
         (blob) => {
           if (blob) {
+            if (resultUrl) URL.revokeObjectURL(resultUrl);
             setResultUrl(URL.createObjectURL(blob));
             setResultSize(blob.size);
           }
@@ -40,8 +48,9 @@ export default function WebPConverter() {
         'image/webp',
         0.8
       );
+      URL.revokeObjectURL(url);
     };
-    img.src = URL.createObjectURL(file);
+    img.src = url;
   };
 
   const downloadWebP = () => {
