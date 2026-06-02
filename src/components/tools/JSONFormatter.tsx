@@ -30,7 +30,7 @@ export default function JSONFormatter() {
 
   const validate = () => {
     const v = validateJSON(input);
-    setError(v.valid ? 'Valid JSON ✓' : `Invalid: ${v.error}`);
+    setError(v.valid ? 'Valid JSON' : `Invalid: ${v.error}`);
   };
 
   const copyToClipboard = () => {
@@ -40,37 +40,67 @@ export default function JSONFormatter() {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 max-w-xl mx-auto my-8">
-      <h2 className="text-xl font-bold text-gray-800 mb-4">JSON Formatter</h2>
-      <textarea
-        value={input}
-        onChange={(e) => { setInput(e.target.value); setError(''); }}
-        placeholder="Paste your JSON here..."
-        rows={6}
-        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none resize-y font-mono text-sm mb-3"
-      />
-      <div className="flex flex-wrap gap-2 mb-3">
-        <button onClick={handleFormat} className="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+    <div className="card animate-fadeInUp" style={{ maxWidth: '42rem', margin: '2rem auto' }}>
+      <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-yellow-100 text-yellow-600">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+        </div>
+        <h2 className="text-xl font-bold text-gray-900">JSON Formatter</h2>
+      </div>
+
+      <div>
+        <label className="label">Input JSON</label>
+        <textarea
+          value={input}
+          onChange={(e) => { setInput(e.target.value); setError(''); }}
+          placeholder='Paste your JSON here...'
+          rows={6}
+          className="textarea font-mono text-sm"
+        />
+      </div>
+
+      <div className="flex flex-wrap gap-2 mt-4">
+        <button onClick={handleFormat} className="btn btn-primary flex-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
           Format
         </button>
-        <button onClick={handleMinify} className="flex-1 bg-gray-600 text-white py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm font-medium">
+        <button onClick={handleMinify} className="btn btn-secondary flex-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
           Minify
         </button>
-        <button onClick={validate} className="flex-1 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">
+        <button onClick={validate} className="btn btn-success flex-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           Validate
         </button>
       </div>
+
       {error && (
-        <div className={`p-2 rounded-lg text-sm mb-3 ${error.includes('Valid') ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'}`}>
-          {error}
+        <div className={`mt-4 p-3 rounded-xl text-sm font-medium ${error === 'Valid JSON' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
+          <div className="flex items-center gap-2">
+            {error === 'Valid JSON' ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+            )}
+            {error === 'Valid JSON' ? 'Valid JSON' : error}
+          </div>
         </div>
       )}
+
       {output && (
-        <div className="relative">
-          <textarea readOnly value={output} rows={6} className="w-full px-3 py-2 border border-green-300 rounded-lg bg-green-50 outline-none resize-y font-mono text-sm" />
-          <button onClick={copyToClipboard} className="absolute top-2 right-2 px-2 py-1 text-xs bg-blue-600 text-white rounded hover:bg-blue-700">
-            {copied ? 'Copied!' : 'Copy'}
-          </button>
+        <div className="mt-4 animate-fadeInUp">
+          <div className="flex items-center justify-between mb-2">
+            <label className="label" style={{ marginBottom: 0 }}>Output</label>
+            <button onClick={copyToClipboard} className={`copy-btn ${copied ? 'copied' : ''}`}>
+              {copied ? (
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              )}
+              {copied ? 'Copied!' : 'Copy'}
+            </button>
+          </div>
+          <textarea readOnly value={output} rows={8} className="textarea font-mono text-sm" style={{ background: 'var(--gray-50)', borderColor: 'var(--green-200)' }} />
         </div>
       )}
     </div>

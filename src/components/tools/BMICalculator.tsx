@@ -22,38 +22,57 @@ export default function BMICalculator() {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 max-w-xl mx-auto my-8">
-      <h2 className="text-xl font-bold text-gray-800 mb-4">BMI Calculator</h2>
-      <div className="space-y-3">
-        <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder="Weight (kg)" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
-        <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} placeholder="Height (cm)" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
-        <button onClick={handleCalculate} className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">Calculate BMI</button>
+    <div className="card animate-fadeInUp" style={{ maxWidth: '36rem', margin: '2rem auto' }}>
+      <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-red-100 text-red-600">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><line x1="6" x2="18" y1="17" y2="17"/></svg>
+        </div>
+        <h2 className="text-xl font-bold text-gray-900">BMI Calculator</h2>
       </div>
+
+      <div className="space-y-4">
+        <div>
+          <label className="label">Weight (kg)</label>
+          <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder="Enter your weight" className="input" />
+        </div>
+        <div>
+          <label className="label">Height (cm)</label>
+          <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} placeholder="Enter your height" className="input" />
+        </div>
+        <button onClick={handleCalculate} className="btn btn-primary w-full">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/></svg>
+          Calculate BMI
+        </button>
+      </div>
+
       {result && (
-        <div className="mt-6 space-y-3">
-          <div className="text-center">
-            <div className="text-4xl font-bold text-gray-800">{result.bmi}</div>
-            <div className="text-sm text-gray-500">Your BMI</div>
+        <div className="mt-6 animate-fadeInUp">
+          <div className="divider"></div>
+          <div className="text-center mb-4">
+            <div className="text-5xl font-bold text-gray-900">{result.bmi}</div>
+            <div className="text-sm text-gray-500 mt-1">Your BMI</div>
           </div>
-          <div className={`text-center p-3 rounded-lg font-semibold ${categoryColor(result.category)}`}>
-            {result.category}
+          <div className={`stat-box text-center mb-4 ${categoryColor(result.category)}`}>
+            <div className="stat-value">{result.category}</div>
           </div>
-          <div className="bg-gray-50 p-3 rounded-lg">
+          <div className="p-4 bg-gray-50 rounded-xl mb-3">
             <div className="text-sm text-gray-500">Healthy Weight Range</div>
             <div className="font-semibold text-gray-700">{result.healthyRange}</div>
           </div>
-          <div className="bg-blue-50 p-3 rounded-lg text-sm text-blue-800">
+          <div className="p-4 bg-blue-50 rounded-xl text-sm text-blue-800">
             {result.advice}
           </div>
           {/* BMI Scale */}
-          <div className="h-3 rounded-full overflow-hidden flex mt-4">
-            <div className="bg-blue-400 flex-1" title="Underweight" />
-            <div className="bg-green-400 flex-[2]" title="Normal" />
-            <div className="bg-orange-400 flex-[1.5]" title="Overweight" />
-            <div className="bg-red-400 flex-[1.5]" title="Obese" />
-          </div>
-          <div className="flex justify-between text-xs text-gray-400">
-            <span>16</span><span>18.5</span><span>25</span><span>30</span><span>40</span>
+          <div className="mt-4">
+            <div className="h-3 rounded-full overflow-hidden flex">
+              <div className="bg-blue-400 flex-1" title="Underweight" />
+              <div className="bg-green-400 flex-[2]" title="Normal" />
+              <div className="bg-orange-400 flex-[1.5]" title="Overweight" />
+              <div className="bg-red-400 flex-[1.5]" title="Obese" />
+            </div>
+            <div className="flex justify-between text-xs text-gray-400 mt-1">
+              <span>16</span><span>18.5</span><span>25</span><span>30</span><span>40</span>
+            </div>
           </div>
         </div>
       )}

@@ -9,19 +9,66 @@ const description = "Calculate your exact age in years, months, days, and total 
 <Layout title={title} description={description} canonical="/tools/age-calculator">
   <main class="min-h-screen bg-gray-50 py-8">
     <div class="max-w-3xl mx-auto px-4">
-      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Age Calculator</h1>
-      <p class="text-gray-600 mb-8">Calculate your exact age in years, months, days, and total days since birth. Free online age calculator tool.</p>
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </a>
+        <span class="breadcrumb-separator">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </span>
+        <a href="/#calculators">Calculators</a>
+        <span class="breadcrumb-separator">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </span>
+        <span class="text-gray-700 font-medium">Age Calculator</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3 tracking-tight">Age Calculator</h1>
+        <p class="text-gray-500 text-lg">Calculate your exact age in years, months, days, and total days since birth.</p>
+      </div>
 
       <!-- React Island -->
       <AgeCalculator client:load />
 
+      <!-- Related Tools -->
+      <div class="mt-12">
+        <h3 class="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-4">Related Tools</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <a href="/tools/date-difference-calculator" class="tool-card group" style="padding: 1rem;">
+            <div class="flex items-center gap-3">
+              <div class="icon-wrapper bg-purple-100 text-purple-600" style="width: 2.5rem; height: 2.5rem; margin-bottom: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 text-sm">Date Difference Calculator</h4>
+                <p class="text-xs text-gray-500">Find days between two dates</p>
+              </div>
+            </div>
+          </a>
+          <a href="/tools/percentage-calculator" class="tool-card group" style="padding: 1rem;">
+            <div class="flex items-center gap-3">
+              <div class="icon-wrapper bg-green-100 text-green-600" style="width: 2.5rem; height: 2.5rem; margin-bottom: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 text-sm">Percentage Calculator</h4>
+                <p class="text-xs text-gray-500">Calculate percentages easily</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
       <!-- SEO Content -->
       <article class="prose prose-gray max-w-none mt-12">
         <h2>What is an Age Calculator?</h2>
-        <p>An age calculator is a free online tool that calculates your exact age based on your date of birth. Unlike simple year-based calculations, our age calculator provides precise results including years, months, days, total days since birth, and the days remaining until your next birthday. It's the most accurate way to determine someone's age for any purpose.</p>
+        <p>An age calculator is a free online tool that calculates your exact age based on your date of birth. Unlike simple year-based calculations, our age calculator provides precise results including years, months, days, total days since birth, and the days remaining until your next birthday.</p>
 
         <h2>How to Use This Age Calculator</h2>
-        <p>Using our free age calculator is simple. Just select your date of birth using the date picker, and click "Calculate Age." The tool instantly displays your exact age in years, months, days, total days since birth, and how many days until your next birthday. No signup or personal information required.</p>
+        <p>Using our free age calculator is simple. Just select your date of birth using the date picker, and click "Calculate Age." The tool instantly displays your exact age in years, months, days, total days since birth, and how many days until your next birthday.</p>
 
         <h2>Use Cases for Our Age Calculator</h2>
         <ul>
@@ -32,31 +79,14 @@ const description = "Calculate your exact age in years, months, days, and total 
           <li><strong>Retirement planning:</strong> Calculate precisely how many days until retirement</li>
         </ul>
 
-        <h2>Benefits of Using Our Online Age Calculator</h2>
-        <p>Our age calculator is completely free, works offline, and provides instant results. It's mobile-friendly and works on any device. There are no ads cluttering the interface, and we don't store any of your personal information. The tool uses pure JavaScript for accurate calculations without any server calls, ensuring your privacy and fast performance.</p>
-
-        <h3>Internal Links</h3>
-        <ul>
-          <li><a href="/tools/date-difference-calculator">Date Difference Calculator</a> - Calculate days between two dates</li>
-          <li><a href="/tools/percentage-calculator">Percentage Calculator</a> - Calculate percentages online</li>
-          <li><a href="/tools/bmi-calculator">BMI Calculator</a> - Check your Body Mass Index</li>
-          <li><a href="/tools/compound-interest-calculator">Compound Interest Calculator</a> - Calculate investment growth</li>
-          <li><a href="/tools/timestamp-converter">Timestamp Converter</a> - Convert timestamps to dates</li>
-        </ul>
-
         <h3>Frequently Asked Questions</h3>
         <h4>Is this age calculator accurate?</h4>
-        <p>Yes, our age calculator provides precise calculations accounting for leap years and varying month lengths. It calculates age down to the exact day.</p>
+        <p>Yes, our age calculator provides precise calculations accounting for leap years and varying month lengths.</p>
         <h4>Do I need to create an account?</h4>
-        <p>No, our age calculator is completely free and requires no registration or personal information.</p>
-        <h4>Can I use this on my phone?</h4>
-        <p>Yes, the age calculator is fully responsive and works perfectly on all devices including smartphones and tablets.</p>
+        <p>No, our age calculator is completely free and requires no registration.</p>
         <h4>Is my date of birth stored?</h4>
-        <p>No, all calculations happen locally in your browser. Your date of birth is never sent to any server or stored anywhere.</p>
-        <h4>Can I calculate age for any date?</h4>
-        <p>Yes, you can enter any date of birth, and the calculator will give you the exact age up to the current date.</p>
+        <p>No, all calculations happen locally in your browser. Your data is never sent to any server.</p>
       </article>
     </div>
   </main>
 </Layout>
-</write_to_file>

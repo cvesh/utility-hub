@@ -41,41 +41,59 @@ export default function PercentageCalculator() {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 max-w-xl mx-auto my-8">
-      <h2 className="text-xl font-bold text-gray-800 mb-4">Percentage Calculator</h2>
-      <div className="flex flex-wrap gap-2 mb-4">
+    <div className="card animate-fadeInUp" style={{ maxWidth: '36rem', margin: '2rem auto' }}>
+      <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-green-100 text-green-600">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+        </div>
+        <h2 className="text-xl font-bold text-gray-900">Percentage Calculator</h2>
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-5">
         {(['of', 'what-percent', 'change'] as Mode[]).map((m) => (
           <button
             key={m}
             onClick={() => { setMode(m); setResult(''); }}
-            className={`px-3 py-1.5 text-sm rounded-lg transition-colors ${mode === m ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+            className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${mode === m ? 'bg-green-600 text-white shadow-sm' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
           >
             {m === 'of' ? '% of' : m === 'what-percent' ? 'What %' : '% Change'}
           </button>
         ))}
       </div>
-      <div className="space-y-3">
-        <input
-          type="number"
-          value={value1}
-          onChange={(e) => setValue1(e.target.value)}
-          placeholder={labels[mode].v1}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
-        />
-        <input
-          type="number"
-          value={value2}
-          onChange={(e) => setValue2(e.target.value)}
-          placeholder={labels[mode].v2}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
-        />
-        <button onClick={handleCalculate} className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+
+      <div className="space-y-4">
+        <div>
+          <label className="label">{labels[mode].v1}</label>
+          <input
+            type="number"
+            value={value1}
+            onChange={(e) => setValue1(e.target.value)}
+            placeholder={`Enter ${labels[mode].v1.toLowerCase()}`}
+            className="input"
+          />
+        </div>
+        <div>
+          <label className="label">{labels[mode].v2}</label>
+          <input
+            type="number"
+            value={value2}
+            onChange={(e) => setValue2(e.target.value)}
+            placeholder={`Enter ${labels[mode].v2.toLowerCase()}`}
+            className="input"
+          />
+        </div>
+        <button onClick={handleCalculate} className="btn btn-success w-full">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
           Calculate
         </button>
       </div>
+
       {result && (
-        <div className="mt-4 p-4 bg-blue-50 rounded-lg text-center">
-          <div className="text-xl font-bold text-blue-700">{result}</div>
+        <div className="mt-6 animate-fadeInUp">
+          <div className="divider"></div>
+          <div className="stat-box bg-green-50">
+            <div className="stat-value text-green-600">{result}</div>
+          </div>
         </div>
       )}
     </div>

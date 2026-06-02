@@ -17,22 +17,32 @@ export default function WordCounter() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 max-w-xl mx-auto my-8">
-      <h2 className="text-xl font-bold text-gray-800 mb-4">Word Counter</h2>
+    <div className="card animate-fadeInUp" style={{ maxWidth: '42rem', margin: '2rem auto' }}>
+      <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-teal-100 text-teal-600">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+        </div>
+        <h2 className="text-xl font-bold text-gray-900">Word Counter</h2>
+      </div>
+
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Type or paste your text here..."
         rows={8}
-        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-y"
+        className="textarea"
       />
-      <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2">
-        {stats.map((s) => (
-          <div key={s.label} className={`${s.color} p-3 rounded-lg text-center`}>
-            <div className="text-lg font-bold">{typeof s.value === 'number' ? s.value.toLocaleString() : s.value}</div>
-            <div className="text-xs opacity-75">{s.label}</div>
-          </div>
-        ))}
+
+      <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {stats.map((s) => {
+          const [textColor, bgColor] = s.color.split(' ');
+          return (
+            <div key={s.label} className={`stat-box ${bgColor}`}>
+              <div className={`stat-value ${textColor}`}>{typeof s.value === 'number' ? s.value.toLocaleString() : s.value}</div>
+              <div className="stat-label">{s.label}</div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

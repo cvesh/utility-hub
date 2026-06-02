@@ -7,153 +7,351 @@ import Layout from '../layouts/Layout.astro';
   title="Utility Hub - Free Online Tools & Calculators"
   description="Free online utility tools: calculators, text tools, dev tools, image tools and design utilities. Fast, mobile-friendly, no signup required."
 >
-  <main class="min-h-screen bg-gray-50">
+  <main class="min-h-screen">
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white py-20">
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Free Online Utility Tools</h1>
-        <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-          Fast, free, and mobile-friendly tools for everyday tasks. No signup, no ads clutter, no backend.
+    <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #4f46e5 100%); padding: 5rem 0 6rem;">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.2) 0%, transparent 50%);"></div>
+
+      <div class="relative max-w-6xl mx-auto px-4 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15);">
+          <span class="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          <span class="text-sm font-medium text-blue-100">100% Free &bull; No Signup Required</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
+          All Your Utility Tools<br/>
+          <span style="background: linear-gradient(to right, #93c5fd, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">In One Place</span>
+        </h1>
+        <p class="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed" style="opacity: 0.9;">
+          Fast, free, and privacy-first tools for everyday tasks. Works entirely in your browser.
         </p>
+
+        <!-- Quick Stats -->
+        <div class="flex flex-wrap justify-center gap-8 mt-12">
+          <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl" style="background: rgba(255,255,255,0.1);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-200"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <div class="text-left">
+              <div class="text-2xl font-bold text-white">20+</div>
+              <div class="text-sm text-blue-200">Free Tools</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl" style="background: rgba(255,255,255,0.1);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-200"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <div class="text-left">
+              <div class="text-2xl font-bold text-white">Instant</div>
+              <div class="text-sm text-blue-200">Results</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl" style="background: rgba(255,255,255,0.1);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-200"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div class="text-left">
+              <div class="text-2xl font-bold text-white">100%</div>
+              <div class="text-sm text-blue-200">Private</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Calculators -->
-    <section class="max-w-6xl mx-auto px-4 py-12">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6">Calculators</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <a href="/tools/age-calculator" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-gray-800">Age Calculator</h3>
+    <!-- Calculators Section -->
+    <section class="max-w-6xl mx-auto px-4 py-16" id="calculators">
+      <div class="section-header">
+        <div class="section-icon bg-blue-100 text-blue-600">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900">Calculators</h2>
+          <p class="text-sm text-gray-500 mt-1">Mathematical and everyday calculators</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <a href="/tools/age-calculator" class="tool-card group">
+          <div class="icon-wrapper bg-blue-100 text-blue-600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">Age Calculator</h3>
           <p class="text-sm text-gray-500">Calculate exact age in years, months, days</p>
+          <div class="flex items-center gap-1 mt-3 text-blue-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
         </a>
-        <a href="/tools/percentage-calculator" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-gray-800">Percentage Calculator</h3>
+        <a href="/tools/percentage-calculator" class="tool-card group">
+          <div class="icon-wrapper bg-green-100 text-green-600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">Percentage Calculator</h3>
           <p class="text-sm text-gray-500">Calculate percentages easily online</p>
+          <div class="flex items-center gap-1 mt-3 text-green-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
         </a>
-        <a href="/tools/date-difference-calculator" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-gray-800">Date Difference Calculator</h3>
+        <a href="/tools/date-difference-calculator" class="tool-card group">
+          <div class="icon-wrapper bg-purple-100 text-purple-600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">Date Difference Calculator</h3>
           <p class="text-sm text-gray-500">Find days between two dates</p>
+          <div class="flex items-center gap-1 mt-3 text-purple-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
         </a>
-        <a href="/tools/compound-interest-calculator" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-gray-800">Compound Interest Calculator</h3>
+        <a href="/tools/compound-interest-calculator" class="tool-card group">
+          <div class="icon-wrapper bg-orange-100 text-orange-600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">Compound Interest Calculator</h3>
           <p class="text-sm text-gray-500">Calculate investment growth over time</p>
+          <div class="flex items-center gap-1 mt-3 text-orange-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
         </a>
-        <a href="/tools/bmi-calculator" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-gray-800">BMI Calculator</h3>
+        <a href="/tools/bmi-calculator" class="tool-card group">
+          <div class="icon-wrapper bg-red-100 text-red-600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><line x1="6" x2="18" y1="17" y2="17"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">BMI Calculator</h3>
           <p class="text-sm text-gray-500">Check your Body Mass Index</p>
+          <div class="flex items-center gap-1 mt-3 text-red-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
         </a>
       </div>
     </section>
 
-    <!-- Text Tools -->
-    <section class="bg-white py-12">
+    <!-- Text Tools Section -->
+    <section class="bg-gray-50 py-16" id="text-tools">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl font-bold text-gray-800 mb-6">Text Tools</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <a href="/tools/word-counter" class="block p-4 bg-gray-50 rounded-lg shadow hover:shadow-md transition-shadow">
-            <h3 class="font-semibold text-gray-800">Word Counter</h3>
+        <div class="section-header">
+          <div class="section-icon bg-teal-100 text-teal-600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 6.1H3"/><path d="M21 12.1H3"/><path d="M15.1 18H3"/></svg>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900">Text Tools</h2>
+            <p class="text-sm text-gray-500 mt-1">Text manipulation and analysis tools</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <a href="/tools/word-counter" class="tool-card group">
+            <div class="icon-wrapper bg-teal-100 text-teal-600">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-1">Word Counter</h3>
             <p class="text-sm text-gray-500">Count words, characters, sentences online</p>
+            <div class="flex items-center gap-1 mt-3 text-teal-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
           </a>
-          <a href="/tools/character-counter" class="block p-4 bg-gray-50 rounded-lg shadow hover:shadow-md transition-shadow">
-            <h3 class="font-semibold text-gray-800">Character Counter</h3>
+          <a href="/tools/character-counter" class="tool-card group">
+            <div class="icon-wrapper bg-indigo-100 text-indigo-600">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-1">Character Counter</h3>
             <p class="text-sm text-gray-500">Count characters including and excluding spaces</p>
+            <div class="flex items-center gap-1 mt-3 text-indigo-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
           </a>
-          <a href="/tools/case-converter" class="block p-4 bg-gray-50 rounded-lg shadow hover:shadow-md transition-shadow">
-            <h3 class="font-semibold text-gray-800">Case Converter</h3>
+          <a href="/tools/case-converter" class="tool-card group">
+            <div class="icon-wrapper bg-pink-100 text-pink-600">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 15 4-8 4 8"/><path d="M4 13h6"/><circle cx="18" cy="12" r="3"/><path d="M15 19v-6"/></svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-1">Case Converter</h3>
             <p class="text-sm text-gray-500">Convert text to upper, lower, title case</p>
+            <div class="flex items-center gap-1 mt-3 text-pink-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
           </a>
-          <a href="/tools/remove-extra-spaces" class="block p-4 bg-gray-50 rounded-lg shadow hover:shadow-md transition-shadow">
-            <h3 class="font-semibold text-gray-800">Remove Extra Spaces</h3>
+          <a href="/tools/remove-extra-spaces" class="tool-card group">
+            <div class="icon-wrapper bg-orange-100 text-orange-600">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-1">Remove Extra Spaces</h3>
             <p class="text-sm text-gray-500">Clean up unnecessary whitespace</p>
+            <div class="flex items-center gap-1 mt-3 text-orange-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Dev Tools -->
-    <section class="max-w-6xl mx-auto px-4 py-12">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6">Dev Tools</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <a href="/tools/json-formatter" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-gray-800">JSON Formatter</h3>
+    <!-- Dev Tools Section -->
+    <section class="max-w-6xl mx-auto px-4 py-16" id="dev-tools">
+      <div class="section-header">
+        <div class="section-icon bg-indigo-100 text-indigo-600">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900">Developer Tools</h2>
+          <p class="text-sm text-gray-500 mt-1">Essential tools for developers and programmers</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <a href="/tools/json-formatter" class="tool-card group">
+          <div class="icon-wrapper bg-yellow-100 text-yellow-600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">JSON Formatter</h3>
           <p class="text-sm text-gray-500">Format, validate, and beautify JSON</p>
+          <div class="flex items-center gap-1 mt-3 text-yellow-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
         </a>
-        <a href="/tools/jwt-decoder" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-gray-800">JWT Decoder</h3>
+        <a href="/tools/jwt-decoder" class="tool-card group">
+          <div class="icon-wrapper bg-red-100 text-red-600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">JWT Decoder</h3>
           <p class="text-sm text-gray-500">Decode and inspect JWT tokens</p>
+          <div class="flex items-center gap-1 mt-3 text-red-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
         </a>
-        <a href="/tools/uuid-generator" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-gray-800">UUID Generator</h3>
+        <a href="/tools/uuid-generator" class="tool-card group">
+          <div class="icon-wrapper bg-purple-100 text-purple-600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">UUID Generator</h3>
           <p class="text-sm text-gray-500">Generate random UUIDs online</p>
+          <div class="flex items-center gap-1 mt-3 text-purple-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
         </a>
-        <a href="/tools/base64-encoder-decoder" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-gray-800">Base64 Encoder/Decoder</h3>
+        <a href="/tools/base64-encoder-decoder" class="tool-card group">
+          <div class="icon-wrapper bg-blue-100 text-blue-600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">Base64 Encoder/Decoder</h3>
           <p class="text-sm text-gray-500">Encode and decode Base64 data</p>
+          <div class="flex items-center gap-1 mt-3 text-blue-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
         </a>
-        <a href="/tools/timestamp-converter" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-gray-800">Timestamp Converter</h3>
+        <a href="/tools/timestamp-converter" class="tool-card group">
+          <div class="icon-wrapper bg-green-100 text-green-600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">Timestamp Converter</h3>
           <p class="text-sm text-gray-500">Convert Unix timestamps to dates</p>
+          <div class="flex items-center gap-1 mt-3 text-green-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
         </a>
-        <a href="/tools/regex-tester" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-gray-800">Regex Tester</h3>
+        <a href="/tools/regex-tester" class="tool-card group">
+          <div class="icon-wrapper bg-orange-100 text-orange-600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8l4 4-4 4"/><path d="M3 12h18"/><path d="M7 16l-4-4 4-4"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">Regex Tester</h3>
           <p class="text-sm text-gray-500">Test regular expressions in real-time</p>
+          <div class="flex items-center gap-1 mt-3 text-orange-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
         </a>
       </div>
     </section>
 
-    <!-- Image/Media Tools -->
-    <section class="bg-white py-12">
+    <!-- Image/Media Tools Section -->
+    <section class="bg-gray-50 py-16" id="image-tools">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl font-bold text-gray-800 mb-6">Image & Media Tools</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <a href="/tools/qr-code-generator" class="block p-4 bg-gray-50 rounded-lg shadow hover:shadow-md transition-shadow">
-            <h3 class="font-semibold text-gray-800">QR Code Generator</h3>
+        <div class="section-header">
+          <div class="section-icon bg-pink-100 text-pink-600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900">Image & Media Tools</h2>
+            <p class="text-sm text-gray-500 mt-1">Image processing and media utilities</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <a href="/tools/qr-code-generator" class="tool-card group">
+            <div class="icon-wrapper text-white" style="background: var(--gray-800);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/></svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-1">QR Code Generator</h3>
             <p class="text-sm text-gray-500">Generate QR codes for any text or URL</p>
+            <div class="flex items-center gap-1 mt-3 text-gray-700 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
           </a>
-          <a href="/tools/image-compressor" class="block p-4 bg-gray-50 rounded-lg shadow hover:shadow-md transition-shadow">
-            <h3 class="font-semibold text-gray-800">Image Compressor</h3>
+          <a href="/tools/image-compressor" class="tool-card group">
+            <div class="icon-wrapper bg-green-100 text-green-600">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-1">Image Compressor</h3>
             <p class="text-sm text-gray-500">Compress images client-side</p>
+            <div class="flex items-center gap-1 mt-3 text-green-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
           </a>
-          <a href="/tools/image-resizer" class="block p-4 bg-gray-50 rounded-lg shadow hover:shadow-md transition-shadow">
-            <h3 class="font-semibold text-gray-800">Image Resizer</h3>
+          <a href="/tools/image-resizer" class="tool-card group">
+            <div class="icon-wrapper bg-blue-100 text-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3H3v18h18V3z"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-1">Image Resizer</h3>
             <p class="text-sm text-gray-500">Resize images to any dimensions</p>
+            <div class="flex items-center gap-1 mt-3 text-blue-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
           </a>
-          <a href="/tools/webp-converter" class="block p-4 bg-gray-50 rounded-lg shadow hover:shadow-md transition-shadow">
-            <h3 class="font-semibold text-gray-800">WebP Converter</h3>
+          <a href="/tools/webp-converter" class="tool-card group">
+            <div class="icon-wrapper bg-purple-100 text-purple-600">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M12 12v6"/><path d="m9 15 3 3 3-3"/></svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-1">WebP Converter</h3>
             <p class="text-sm text-gray-500">Convert images to WebP format</p>
+            <div class="flex items-center gap-1 mt-3 text-purple-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Design Tools -->
-    <section class="max-w-6xl mx-auto px-4 py-12">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6">Design & Utility Tools</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <a href="/tools/color-picker" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-gray-800">Color Picker</h3>
+    <!-- Design Tools Section -->
+    <section class="max-w-6xl mx-auto px-4 py-16" id="design-tools">
+      <div class="section-header">
+        <div class="section-icon bg-purple-100 text-purple-600">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900">Design & Utility Tools</h2>
+          <p class="text-sm text-gray-500 mt-1">Design helpers and miscellaneous utilities</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <a href="/tools/color-picker" class="tool-card group">
+          <div class="icon-wrapper" style="background: linear-gradient(135deg, #fde68a, #f0abfc, #93c5fd); color: white;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">Color Picker</h3>
           <p class="text-sm text-gray-500">Pick and convert colors between HEX and RGB</p>
+          <div class="flex items-center gap-1 mt-3 text-purple-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            Use tool <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
         </a>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-300 py-8">
-      <div class="max-w-6xl mx-auto px-4 text-center text-sm">
-        <p>&copy; 2026 Utility Hub. Free online tools for everyone.</p>
+    <!-- CTA Section -->
+    <section class="relative overflow-hidden py-20" style="background: linear-gradient(135deg, #1e40af 0%, #4338ca 100%);">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">All Tools. Always Free. No Catch.</h2>
+        <p class="text-lg text-blue-100 mb-8" style="opacity: 0.9;">
+          All our tools run entirely in your browser. Your data never leaves your device. No accounts, no tracking, no limits.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#calculators" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-700 font-semibold rounded-xl hover:shadow-lg transition-all hover:-translate-y-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+            Explore Tools
+          </a>
+        </div>
       </div>
-    </footer>
+    </section>
   </main>
 </Layout>
-</write_to_file>
-<task_progress>
-- [x] Set up Astro project with dependencies
-- [ ] Create project configuration files
-- [ ] Generate 20 utility tools (CALCULATORS: 1-5)
-- [ ] Generate 20 utility tools (TEXT TOOLS: 6-9)
-- [ ] Generate 20 utility tools (DEV TOOLS: 10-15)
-- [ ] Generate 20 utility tools (IMAGE/MEDIA: 16-19)
-- [ ] Generate 20 utility tools (DESIGN: 20)
-- [ ] Create shared components and layouts
-- [ ] Verify project builds successfully
-</task_write_to_file>
